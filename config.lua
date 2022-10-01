@@ -37,6 +37,10 @@ lvim.builtin.lualine.sections = {
   lualine_z = { "location" },
 }
 
+lvim.builtin.bufferline.options = {
+  separator_style = "slant",
+}
+
 vim.showtabline = 2
 vim.cmd(":tnoremap <Esc> <C-\\><C-n>")
 
