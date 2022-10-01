@@ -38,6 +38,10 @@ lvim.builtin.lualine.sections = {
 }
 
 vim.showtabline = 2
+vim.cmd(":tnoremap <Esc> <C-\\><C-n>")
+
+lvim.builtin.terminal.direction = 'horizontal'
+lvim.builtin.terminal.start_in_insert = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -53,6 +57,11 @@ lvim.keys.insert_mode["<C-f>"] = "<right>"
 lvim.keys.insert_mode["<C-b>"] = "<left>"
 lvim.keys.insert_mode["<C-n>"] = "<down>"
 lvim.keys.insert_mode["<C-p>"] = "<up>"
+
+lvim.keys.normal_mode["<Up>"] = ":resize +2<CR>"
+lvim.keys.normal_mode["<Down>"] = ":resize -2<CR>"
+lvim.keys.normal_mode["<Left>"] = ":vertical resize -2<CR>"
+lvim.keys.normal_mode["<Right>"] = ":vertical resize +2<CR>"
 
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
@@ -105,6 +114,11 @@ lvim.builtin.which_key.mappings["w"] =
   l = { "<C-w>l", "Right" },
 }
 
+lvim.builtin.which_key.mappings["o"] =
+{
+  name = "+Open",
+  t = { ":ToggleTerm<CR>", "Terminal" },
+}
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
